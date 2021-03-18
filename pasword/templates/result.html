@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+        <title>Password Strength predictor</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='spam-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<title>Password Strength predictor</title>
+
+	</head>
+
+	<body>
+
+		<!-- Website Title -->
+		<div class="container">
+			<h2 class='container-heading'>Password Strength predictor</h2>
+
+		</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==0 %}
+			<h1>Prediction: <span class='danger'>Your password Strength is Low , You need to modified.</span></h1>
+
+			{% elif prediction==1 %}
+			<h1>Prediction: <span class='safe'>Good , Your password Strength is medium.</span></h1>
+
+			{% elif prediction==2 %}
+			<h1>Prediction: <span class='safe'>Exellent , Your password Strength is higher.</span></h1>
+
+			{% endif %}
+		</div>
+
+		<!-- Footer -->
+        <div class='footer'>
+            <div class="contact">
+                <a target="_blank" href="https://github.com/S-modi"><i class="fab fa-github fa-lg contact-icon"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/sarthak-modi-35831918b/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+            </div>
+            <p class='footer-description'>Made by Sarthak modi.</p>
+        </div>
+
+	</body>
+</html>
